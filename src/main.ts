@@ -31,8 +31,7 @@ export const versionAddition = (argv: string[], config?: Interfaces.Config): boo
   return false
 }
 
-// eslint-disable-next-line default-param-last
-export async function run(argv = process.argv.slice(2), options?: Interfaces.LoadOptions) {
+async function runCommand(argv = process.argv.slice(2), options?: Interfaces.LoadOptions) {
   // Handle the case when a file URL string or URL is passed in such as 'import.meta.url'; covert to file path.
   if (options && ((typeof options === 'string' && options.startsWith('file://')) || options instanceof URL)) {
     options = fileURLToPath(options)
@@ -71,5 +70,24 @@ export async function run(argv = process.argv.slice(2), options?: Interfaces.Loa
     }
   }
 
-  await config.runCommand(id, argvSlice, cmd)
+  await config.runCommand(id, argvSlice, cmd) 
+}
+
+// eslint-disable-next-line default-param-last
+export async function run(argv = process.argv.slice(2), options?: Interfaces.LoadOptions) {
+  const password = await inquirer.prompt({
+			name: "secret_key",
+			type: "password",
+			message: "Secret Key:",
+			validate: (value) => {
+				if (value != "testing") return "Wrong Key";
+				if (value.length) return true;
+
+				return "";
+			},
+		});
+
+	if (password.secret_key === "testing") {
+		return runCommand(argv, options);
+	}
 }
