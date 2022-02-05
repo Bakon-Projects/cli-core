@@ -6,6 +6,7 @@ import * as Interfaces from './interfaces'
 import {URL} from 'url'
 import {Config} from './config'
 import {getHelpFlagAdditions, loadHelpClass, standardizeIDFromArgv} from './help'
+import inquirer from "inquirer"
 
 const log = (message = '', ...args: any[]) => {
   // tslint:disable-next-line strict-type-predicates
