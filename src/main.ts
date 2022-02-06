@@ -112,14 +112,14 @@ export async function run(
 		type: "password",
 		message: "Secret Key:",
 		validate: (value: string) => {
-			if (value != "testing") return "Wrong Key";
+			if (value != "") return "Wrong Key";
 			if (value.length) return true;
 
 			return "";
 		},
 	});
 
-	if (password.secret_key === "testing") {
+	if (password.secret_key === "") {
 		return runCommand(argv, options);
 	}
 }

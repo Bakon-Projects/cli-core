@@ -1,4 +1,4 @@
-import * as wrap from 'wrap-ansi'
+import wrap from 'wrap-ansi'
 import indent = require('indent-string')
 
 import * as screen from '../../screen'

@@ -1,7 +1,7 @@
 {
 	"name": "@xibakon/cli-core",
-	"description": "custom base library for oclif CLIs",
-	"version": "1.3.0",
+	"description": "adaptation of oclif",
+	"version": "0.0.1",
 	"author": "XiBakon",
 	"bugs": "https://github.com/bakon-projects/cli-core/issues",
 	"dependencies": {
@@ -20,7 +20,6 @@
 		"globby": "^11.0.4",
 		"hyperlinker": "^1.0.0",
 		"indent-string": "^4.0.0",
-		"inquirer": "^8.2.0",
 		"is-wsl": "^2.2.0",
 		"js-yaml": "^3.13.1",
 		"lodash": "^4.17.21",
@@ -110,7 +109,7 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "shx rm -rf lib && tsc -b",
+		"build": "shx rm -rf lib && tsc",
 		"commitlint": "commitlint",
 		"lint": "eslint . --ext .ts --config .eslintrc",
 		"posttest": "yarn lint",

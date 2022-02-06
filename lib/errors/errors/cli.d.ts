@@ -1,4 +1,4 @@
-import { PrettyPrintableError, OclifError } from '../../interfaces/errors';
+import { PrettyPrintableError, OclifError } from "../../interfaces/errors";
 /**
  * properties specific to internal oclif error handling
  */
@@ -6,7 +6,7 @@ export declare function addOclifExitCode(error: Record<string, any>, options?: {
     exit?: number | false;
 }): OclifError;
 export declare class CLIError extends Error implements OclifError {
-    oclif: OclifError['oclif'];
+    oclif: OclifError["oclif"];
     code?: string;
     constructor(error: string | Error, options?: {
         exit?: number | false;

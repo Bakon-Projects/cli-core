@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { ActionBase, ActionType } from './base';
+import { ActionBase, ActionType } from "./base";
 export default class SpinnerAction extends ActionBase {
     type: ActionType;
     spinner?: NodeJS.Timeout;
